@@ -5,7 +5,7 @@ import re
 from huggingface_hub import InferenceClient
 
 # 🔐 Set your Hugging Face token directly here
-os.environ["HF_TOKEN"] = "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"
+os.environ["HF_TOKEN"] = "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"
 
 # Access token
 HF_TOKEN = os.getenv("HF_TOKEN")
@@ -79,6 +79,7 @@ if st.button("Get Answer"):
 
             except Exception as e:
                 st.error(f"❌ An error occurred: {str(e)}")
+
 
 
 
