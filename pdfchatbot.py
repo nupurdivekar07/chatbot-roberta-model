@@ -3,15 +3,18 @@ import os
 import PyPDF2
 import re
 from huggingface_hub import InferenceClient
+from dotenv import load_dotenv
+from huggingface_hub import InferenceClient
 
-# 🔐 Set your Hugging Face token directly here
-os.environ["HF_TOKEN"] = "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"
+# Load environment variables from .env file
+load_dotenv()
 
-# Access token
+# Get the token
 HF_TOKEN = os.getenv("HF_TOKEN")
 
-# Set up the Inference Client
+# Setup Hugging Face Inference client
 client = InferenceClient(api_key=HF_TOKEN)
+
 
 st.title("📄📚 PDF-Based Question Answering with Hugging Face")
 st.markdown("""
@@ -79,6 +82,7 @@ if st.button("Get Answer"):
 
             except Exception as e:
                 st.error(f"❌ An error occurred: {str(e)}")
+
 
 
 
