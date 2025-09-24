@@ -71,7 +71,7 @@ if st.button("Get Answer"):
                 answer = client.question_answering(
                     question=question,
                     context=relevant_context,
-                    model="deepset/longformer-base-4096-squad2",
+                    model="valhalla/longformer-base-4096-finetuned-squadv1",
                 )
 
                 st.success("✅ Answer:")
@@ -79,6 +79,7 @@ if st.button("Get Answer"):
 
             except Exception as e:
                 st.error(f"❌ An error occurred: {str(e)}")
+
 
 
 
